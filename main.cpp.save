@@ -1,0 +1,60 @@
+    #include <iostream>
+    #include <string>
+    #include <fstream>
+    int main()
+    {
+        using namespace std;
+
+
+
+
+
+int number_of_lines = 0, track=1;
+    string line;
+    ifstream myfile("training_set.csv");
+    while (myfile.good ())
+	{
+        getline(myfile, line);
+        cout << line <<  endl;
+        if (line=="")
+        {
+            cout << "Number of lines for track "<< track << " is "<<number_of_lines<< endl; 
+            number_of_lines=0;
+            track++;
+        }
+        else 
+        {
+            ++number_of_lines;
+        
+}
+        
+	}
+//	cout << "Number of lines for track "<< track << " is "<<number_of_lines<< endl; 
+//	system("pause");
+//	return 0;
+}
+
+
+
+
+/*
+        const int rows = 201;
+        const int cols = 21;
+        ifstream file("training_set.csv");
+        if (file.is_open()) {
+            char r[rows][cols];
+            for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < cols; ++j) {
+                    file >> r[i][j];
+                    file.get(); // Throw away the comma
+                }
+            }
+            for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < cols; ++j) {
+                    cout << r[i][j] << ' ';
+                }
+                cout << '\n';
+            }
+        }
+    }
+*/
